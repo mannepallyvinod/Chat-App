@@ -17,7 +17,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    dockerContainer = dockerImage.run("-p 8080:3700 -d")
+                    dockerContainer = dockerImage.run("-p 8080:3700 /bin/bash")
                     dockerContainerId = dockerContainer.id
                 }
             }
